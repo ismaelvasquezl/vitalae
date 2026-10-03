@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Vitalae — Cannabis Medicinal en Chile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+:root {
+  --primary: #2D5F4F;
+  --primary-dark: #1F4438;
+  --primary-light: #4A7E6E;
+  --neutral: #F0F4EE;
+  --neutral-warm: #E8EDE5;
+  --alert: #8B3A3A;
+  --alert-soft: #B85555;
+  --ink: #1A2A24;
+  --ink-soft: #3E4A45;
+  --gold: #C4A878;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: #2a2a2a;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.toolbar {
+  max-width: 1080px;
+  margin: 0 auto 40px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+.toolbar h1 {
+  font-family: 'DM Serif Display', serif;
+  color: var(--primary);
+  font-size: 24px;
+  margin-right: auto;
+}
+.toolbar button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+}
+.toolbar button:hover { background: var(--primary-dark); }
+.toolbar .hint { font-size: 13px; color: #666; width: 100%; text-align: center; margin-top: 8px; }
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* === BASE SLIDE === */
+.slide {
+  width: 1080px;
+  height: 1350px;
+  background: var(--neutral);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* shared elements */
+.slide-number {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  font-weight: 500;
+  z-index: 5;
+}
+.slide-number span { opacity: 0.5; }
+
+.footer-band {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+.footer-band .brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-band .brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.footer-band .brand-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+.footer-band .footer-meta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* === SLIDE 1: COVER === */
+.slide-1 {
+  background: linear-gradient(160deg, #2D5F4F 0%, #1F4438 100%);
+  color: white;
+}
+.slide-1 .ornament-top {
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.slide-1 .ornament-top .label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.slide-1 .ornament-top .logo-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+.slide-1 .ornament-top .logo-circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.slide-1 .cover-content {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  right: 60px;
+  transform: translateY(-50%);
+}
+.slide-1 .eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 30px;
+}
+.slide-1 .cover-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 110px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 36px;
+  font-style: italic;
+}
+.slide-1 .cover-title .accent {
+  color: var(--gold);
+  font-style: normal;
+}
+.slide-1 .cover-divider {
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 36px;
+}
+.slide-1 .cover-sub {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1.35;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+.slide-1 .cover-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.slide-1 .arrow {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  position: relative;
+}
+.slide-1 .arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+.slide-1 .bg-pattern {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  opacity: 0.04;
+  background-image: radial-gradient(circle, white 2px, transparent 2px);
+  background-size: 20px 20px;
+}
+
+/* === SLIDE 2: MYTHS — split alert/clean === */
+.slide-2 {
+  background: var(--neutral);
+}
+.slide-2 .grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(45,95,79,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,95,79,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.slide-2 .myths-content {
+  position: absolute;
+  top: 160px;
+  left: 60px;
+  right: 60px;
+  bottom: 180px;
+}
+.slide-2 .eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--alert);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide-2 .eyebrow::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--alert);
+}
+.slide-2 .myths-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 74px;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 50px;
+  letter-spacing: -0.02em;
+}
+.slide-2 .myths-title .italic {
+  font-style: italic;
+  color: var(--primary);
+}
+.slide-2 .myth-item {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(45,95,79,0.15);
+}
+.slide-2 .myth-item:last-child { border-bottom: none; }
+.slide-2 .myth-text {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--ink-soft);
+  flex: 1;
+  text-decoration: line-through;
+  text-decoration-color: rgba(139,58,58,0.4);
+  text-decoration-thickness: 2px;
+}
+.slide-2 .myth-flag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--alert);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.slide-2 .myths-close {
+  margin-top: 40px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* === SLIDE 3-4: LEGAL FRAMEWORK === */
+.slide-legal {
+  background: var(--neutral);
+}
+.slide-legal .legal-mark {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide-legal .legal-mark::after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.4;
+}
+.slide-legal .big-number {
+  position: absolute;
+  top: 130px;
+  right: 60px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 280px;
+  line-height: 0.8;
+  color: var(--primary);
+  opacity: 0.08;
+  letter-spacing: -0.05em;
+}
+.slide-legal .legal-content {
+  position: absolute;
+  top: 280px;
+  left: 60px;
+  right: 60px;
+  bottom: 180px;
+}
+.slide-legal .legal-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+.slide-legal .legal-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 88px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin-bottom: 40px;
+}
+.slide-legal .legal-title .italic { font-style: italic; }
+.slide-legal .legal-lead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 23px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--ink);
+  max-width: 880px;
+  margin-bottom: 40px;
+}
+.slide-legal .legal-lead b { color: var(--primary); font-weight: 700; }
+.slide-legal .quote-card {
+  background: var(--primary);
+  color: white;
+  padding: 30px 36px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.slide-legal .quote-card .quote-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #E0C896;
+  margin-bottom: 14px;
+}
+.slide-legal .quote-card .quote-text {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.95);
+}
+.slide-legal .source {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-top: 1px solid rgba(45,95,79,0.2);
+  padding-top: 16px;
+}
+
+/* === SLIDE 5: ACCESS WAYS — 3 columns === */
+.slide-access {
+  background: var(--neutral);
+}
+.slide-access .access-mark {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide-access .access-mark::after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.4;
+}
+.slide-access .access-content {
+  position: absolute;
+  top: 140px;
+  left: 60px;
+  right: 60px;
+  bottom: 180px;
+}
+.slide-access .access-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+.slide-access .access-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 80px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+.slide-access .access-title .italic { font-style: italic; }
+.slide-access .access-lead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+.slide-access .access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.slide-access .access-card {
+  background: white;
+  border-radius: 4px;
+  padding: 30px 24px 60px 24px;
+  border-top: 3px solid var(--primary);
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+.slide-access .access-card .num {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 56px;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.slide-access .access-card .name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.slide-access .access-card .desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  font-weight: 400;
+  flex: 1;
+}
+.slide-access .access-card .desc b {
+  color: var(--primary);
+  font-weight: 700;
+}
+.slide-access .access-card .badge {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border: 1px solid rgba(45,95,79,0.3);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+.slide-access .access-note {
+  margin-top: 30px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.slide-access .access-note b {
+  color: var(--primary);
+  font-style: normal;
+}
+
+/* === SLIDE 6: SCIENCE — endocannabinoid === */
+.slide-science {
+  background: var(--neutral);
+}
+.slide-science .science-mark {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide-science .science-mark::after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.4;
+}
+.slide-science .big-symbol {
+  position: absolute;
+  top: 130px;
+  right: 60px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 240px;
+  line-height: 0.8;
+  color: var(--primary);
+  opacity: 0.06;
+  letter-spacing: -0.05em;
+}
+.slide-science .science-content {
+  position: absolute;
+  top: 280px;
+  left: 60px;
+  right: 60px;
+  bottom: 180px;
+}
+.slide-science .eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+.slide-science .title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 78px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin-bottom: 36px;
+}
+.slide-science .title .italic { font-style: italic; }
+.slide-science .lead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 23px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 880px;
+  margin-bottom: 30px;
+}
+.slide-science .lead b { color: var(--primary); font-weight: 700; }
+.slide-science .functions {
+  border-top: 1px solid rgba(45,95,79,0.2);
+  padding-top: 24px;
+}
+.slide-science .functions .label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.slide-science .functions-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.slide-science .function-chip {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--primary);
+  padding: 8px 18px;
+  background: white;
+  border-radius: 2px;
+  border: 1px solid rgba(45,95,79,0.2);
+}
+
+/* === SLIDE 7: EVIDENCE === */
+.slide-evidence {
+  background: var(--neutral);
+}
+.slide-evidence .ev-mark {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide-evidence .ev-mark::after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.4;
+}
+.slide-evidence .ev-content {
+  position: absolute;
+  top: 140px;
+  left: 60px;
+  right: 60px;
+  bottom: 180px;
+}
+.slide-evidence .ev-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 18px;
+  opacity: 0.7;
+}
+.slide-evidence .ev-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 72px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+.slide-evidence .ev-title .italic { font-style: italic; }
+.slide-evidence .ev-lead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 21px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+  max-width: 880px;
+}
+.slide-evidence .ev-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.slide-evidence .ev-row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(45,95,79,0.15);
+}
+.slide-evidence .ev-num {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--primary);
+  min-width: 50px;
+}
+.slide-evidence .ev-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  color: var(--ink);
+  flex: 1;
+}
+.slide-evidence .ev-name .accent {
+  color: var(--primary);
+  font-style: italic;
+}
+.slide-evidence .ev-strength {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border: 1px solid rgba(45,95,79,0.3);
+  padding: 4px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.slide-evidence .ev-footer {
+  margin-top: 32px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 0 40px;
+}
+
+/* === SLIDE 8: WHAT IT IS NOT === */
+.slide-not {
+  background: linear-gradient(165deg, #2D5F4F 0%, #1F4438 100%);
+  color: white;
+}
+.slide-not .not-mark {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide-not .not-mark::after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+.slide-not .slide-number-w {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  font-weight: 500;
+  z-index: 5;
+}
+.slide-not .slide-number-w span { opacity: 0.5; }
+.slide-not .not-content {
+  position: absolute;
+  top: 160px;
+  left: 60px;
+  right: 60px;
+  bottom: 180px;
+}
+.slide-not .not-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+.slide-not .not-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 88px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+.slide-not .not-title .italic { font-style: italic; color: var(--gold); }
+.slide-not .not-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.slide-not .not-item {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.slide-not .not-mark-x {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--alert-soft);
+  min-width: 30px;
+}
+.slide-not .not-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  line-height: 1.3;
+  color: rgba(255,255,255,0.9);
+  flex: 1;
+}
+.slide-not .not-text .accent {
+  color: var(--gold);
+  font-style: italic;
+}
+.slide-not .not-close {
+  margin-top: 32px;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--gold);
+  text-align: right;
+  border-top: 1px solid rgba(196,168,120,0.3);
+  padding-top: 24px;
+}
+.slide-not .footer-band-w {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+.slide-not .footer-band-w .brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.slide-not .footer-band-w .brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.slide-not .footer-band-w .brand-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--gold);
+}
+.slide-not .footer-band-w .footer-meta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+/* === SLIDE 9: PROFESSIONAL CRITERIA === */
+.slide-prof {
+  background: var(--neutral);
+}
+.slide-prof .prof-mark {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide-prof .prof-mark::after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.4;
+}
+.slide-prof .prof-content {
+  position: absolute;
+  top: 140px;
+  left: 60px;
+  right: 60px;
+  bottom: 180px;
+}
+.slide-prof .prof-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+.slide-prof .prof-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 76px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin-bottom: 32px;
+}
+.slide-prof .prof-title .italic { font-style: italic; }
+.slide-prof .prof-lead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  margin-bottom: 30px;
+  max-width: 850px;
+}
+.slide-prof .criteria-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 36px;
+}
+.slide-prof .criterion {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(45,95,79,0.12);
+}
+.slide-prof .check {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--primary);
+  min-width: 22px;
+}
+.slide-prof .criterion-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--ink);
+  flex: 1;
+}
+.slide-prof .criterion-text b {
+  color: var(--primary);
+  font-weight: 700;
+}
+.slide-prof .verify-tip {
+  margin-top: 28px;
+  background: white;
+  border-left: 3px solid var(--gold);
+  padding: 18px 24px;
+  border-radius: 2px;
+}
+.slide-prof .verify-tip .tip-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.slide-prof .verify-tip .tip-text {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--ink);
+}
+
+/* === SLIDE 10: CTA === */
+.slide-cta {
+  background: linear-gradient(165deg, #2D5F4F 0%, #1F4438 100%);
+  color: white;
+}
+.slide-cta .cta-eyebrow {
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide-cta .cta-eyebrow::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+.slide-cta .cta-logo {
+  position: absolute;
+  top: 80px;
+  right: 60px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: white;
+  padding: 6px;
+}
+.slide-cta .cta-logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.slide-cta .cta-content {
+  position: absolute;
+  top: 220px;
+  left: 60px;
+  right: 60px;
+}
+.slide-cta .cta-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 84px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: 30px;
+}
+.slide-cta .cta-title .accent {
+  color: var(--gold);
+  font-style: italic;
+}
+.slide-cta .cta-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+.slide-cta .cta-body b {
+  color: var(--gold);
+  font-weight: 500;
+}
+.slide-cta .cta-steps {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.slide-cta .step {
+  flex: 1;
+  border: 1px solid rgba(196,168,120,0.4);
+  padding: 22px 20px;
+  border-radius: 4px;
+}
+.slide-cta .step-num {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.slide-cta .step-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.9);
+  font-weight: 400;
+}
+.slide-cta .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 36px;
+  background: var(--gold);
+  color: var(--primary-dark);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.slide-cta .disclaimer {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  right: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>Vitalae · Carrusel Cannabis Medicinal</h1>
+  <button onclick="exportAll()">↓ Exportar todas (PNG)</button>
+  <button onclick="exportCurrent()">↓ Exportar visible</button>
+  <p class="hint">10 láminas · 1080×1350 px · Listas para Instagram. Sin imágenes de la planta, sin productos, sin marcas — solo tipografía editorial y datos. Marco legal y científico riguroso para Chile.</p>
+</div>
+
+<div class="carousel-container" id="carousel">
+
+  <!-- ====== SLIDE 1: COVER ====== -->
+  <div class="slide slide-1" id="s1">
+    <div class="bg-pattern"></div>
+    <div class="ornament-top">
+      <div class="label">Vitalae · Bienestar y Ciencia</div>
+      <div class="logo-circle"><img src="data:image/jpeg;base64,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" alt="Vitalae"/></div>
+    </div>
+    <div class="cover-content">
+      <div class="eyebrow">Medicina Cannábica · Chile</div>
+      <h1 class="cover-title">Cannabis<br/><span class="accent">medicinal.</span></h1>
+      <div class="cover-divider"></div>
+      <p class="cover-sub">Lo que dice la ley.<br/>Lo que dice la ciencia.<br/>Lo que dice tu médico.</p>
+      <div class="cover-cta">
+        <span>Desliza</span>
+        <span class="arrow"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 2: MYTHS ====== -->
+  <div class="slide slide-2" id="s2">
+    <div class="grid-bg"></div>
+    <div class="slide-number"><span>01 / </span>10</div>
+    <div class="myths-content">
+      <div class="eyebrow">Empecemos por aclarar</div>
+      <h2 class="myths-title">Cuatro <span class="italic">mitos</span><br/>que circulan.</h2>
+
+      <div class="myth-item">
+        <div class="myth-text">"Es ilegal en Chile."</div>
+        <div class="myth-flag">Falso</div>
+      </div>
+      <div class="myth-item">
+        <div class="myth-text">"Cualquiera puede recetarlo."</div>
+        <div class="myth-flag">Falso</div>
+      </div>
+      <div class="myth-item">
+        <div class="myth-text">"Sirve para todo."</div>
+        <div class="myth-flag">Falso</div>
+      </div>
+      <div class="myth-item">
+        <div class="myth-text">"No tiene evidencia clínica."</div>
+        <div class="myth-flag">Falso</div>
+      </div>
+
+      <p class="myths-close">Hablemos con datos.</p>
+    </div>
+    <div class="footer-band">
+      <div class="brand">
+        <img src="data:image/jpeg;base64,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" alt="Vitalae"/>
+        <div class="brand-name">Vitalae</div>
+      </div>
+      <div class="footer-meta">Medicina Cannábica · Chile</div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 3: LEGAL 2015 ====== -->
+  <div class="slide slide-legal" id="s3">
+    <div class="slide-number"><span>02 / </span>10</div>
+    <div class="legal-mark">Marco legal · Parte 01</div>
+    <div class="big-number">2015</div>
+    <div class="legal-content">
+      <div class="legal-eyebrow">El punto de inflexión</div>
+      <h2 class="legal-title">Sí, es <span class="italic">legal.</span><br/>Desde 2015.</h2>
+      <p class="legal-lead">En julio de 2015, el <b>Instituto de Salud Pública (ISP)</b> emitió el Oficio N°1.014, que abrió formalmente el uso del cannabis y sus derivados para investigación científica, clínica y tratamientos médicos en Chile.</p>
+      <div class="quote-card">
+        <div class="quote-label">Decreto 84 / MINSAL</div>
+        <div class="quote-text">"Modifica los reglamentos 404 y 405 sobre estupefacientes y sicotrópicos para regular el uso medicinal del cannabis."</div>
+      </div>
+      <div class="source">Fuente · ISP Chile · Ministerio de Salud · Diario Oficial</div>
+    </div>
+    <div class="footer-band">
+      <div class="brand">
+        <img src="data:image/jpeg;base64,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" alt="Vitalae"/>
+        <div class="brand-name">Vitalae</div>
+      </div>
+      <div class="footer-meta">Marco regulatorio</div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 4: LEGAL 2023 ====== -->
+  <div class="slide slide-legal" id="s4">
+    <div class="slide-number"><span>03 / </span>10</div>
+    <div class="legal-mark">Marco legal · Parte 02</div>
+    <div class="big-number">2023</div>
+    <div class="legal-content">
+      <div class="legal-eyebrow">El reconocimiento explícito</div>
+      <h2 class="legal-title">Tu receta es<br/>tu <span class="italic">respaldo</span>.</h2>
+      <p class="legal-lead">En mayo de 2023, la <b>Ley 20.000</b> incorporó el Artículo 8°. Este artículo reconoce que la receta médica vigente justifica legalmente el cultivo personal o la tenencia de cannabis con fines medicinales.</p>
+      <div class="quote-card">
+        <div class="quote-label">Ley 20.000 · Artículo 8° (2023)</div>
+        <div class="quote-text">"La receta médica no es un permiso — es un respaldo legal frente a fiscalización."</div>
+      </div>
+      <div class="source">Fuente · Ley 20.000 modificada · Fundación Daya · Biblioteca del Congreso Nacional</div>
+    </div>
+    <div class="footer-band">
+      <div class="brand">
+        <img src="data:image/jpeg;base64,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" alt="Vitalae"/>
+        <div class="brand-name">Vitalae</div>
+      </div>
+      <div class="footer-meta">Marco regulatorio</div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 5: ACCESS WAYS ====== -->
+  <div class="slide slide-access" id="s5">
+    <div class="slide-number"><span>04 / </span>10</div>
+    <div class="access-mark">Vías de acceso · 3 caminos</div>
+    <div class="access-content">
+      <div class="access-eyebrow">Cómo funciona en la práctica</div>
+      <h2 class="access-title">Tres <span class="italic">vías</span><br/>de acceso legal.</h2>
+      <p class="access-lead">En Chile existen tres caminos formales para acceder a cannabis medicinal. Las tres requieren <b>evaluación clínica previa y receta médica</b>.</p>
+
+      <div class="access-grid">
+        <div class="access-card">
+          <div class="num">i.</div>
+          <div class="name">Farmacia<br/>autorizada</div>
+          <div class="desc">Medicamentos <b>registrados por ISP</b>, como el primer producto aprobado en Chile en 2017.</div>
+          <div class="badge">Registro ISP</div>
+        </div>
+        <div class="access-card">
+          <div class="num">ii.</div>
+          <div class="name">Farmacia<br/>magistral</div>
+          <div class="desc">Preparación <b>específica</b> y personalizada a partir de receta médica vigente.</div>
+          <div class="badge">Por receta</div>
+        </div>
+        <div class="access-card">
+          <div class="num">iii.</div>
+          <div class="name">Autocultivo<br/>personal</div>
+          <div class="desc">Respaldado por <b>receta médica</b> según Art. 8° de Ley 20.000.</div>
+          <div class="badge">Uso personal</div>
+        </div>
+      </div>
+
+      <p class="access-note">Todas las vías requieren <b>evaluación médica.</b></p>
+    </div>
+    <div class="footer-band">
+      <div class="brand">
+        <img src="data:image/jpeg;base64,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" alt="Vitalae"/>
+        <div class="brand-name">Vitalae</div>
+      </div>
+      <div class="footer-meta">Vías legales · Chile</div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 6: SCIENCE — ENDOCANNABINOID ====== -->
+  <div class="slide slide-science" id="s6">
+    <div class="slide-number"><span>05 / </span>10</div>
+    <div class="science-mark">Ciencia básica · Por qué funciona</div>
+    <div class="big-symbol">SEC</div>
+    <div class="science-content">
+      <div class="eyebrow">Tu cuerpo ya lo conoce</div>
+      <h2 class="title">El sistema<br/><span class="italic">endocannabinoide</span>.</h2>
+      <p class="lead">Tu cuerpo produce sus propios cannabinoides. Es un <b>sistema regulador interno</b> presente en cerebro, sistema inmune, intestino y tejido periférico. Los fitocannabinoides del cannabis interactúan con este sistema modulando sus funciones.</p>
+      <div class="functions">
+        <div class="label">Funciones que regula</div>
+        <div class="functions-list">
+          <span class="function-chip">dolor</span>
+          <span class="function-chip">inflamación</span>
+          <span class="function-chip">apetito</span>
+          <span class="function-chip">sueño</span>
+          <span class="function-chip">ánimo</span>
+          <span class="function-chip">memoria</span>
+          <span class="function-chip">respuesta inmune</span>
+          <span class="function-chip">homeostasis</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-band">
+      <div class="brand">
+        <img src="data:image/jpeg;base64,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" alt="Vitalae"/>
+        <div class="brand-name">Vitalae</div>
+      </div>
+      <div class="footer-meta">Fisiología · SEC</div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 7: EVIDENCE ====== -->
+  <div class="slide slide-evidence" id="s7">
+    <div class="slide-number"><span>06 / </span>10</div>
+    <div class="ev-mark">Evidencia clínica · Indicaciones</div>
+    <div class="ev-content">
+      <div class="ev-eyebrow">Lo que muestra la literatura</div>
+      <h2 class="ev-title">¿Para <span class="italic">qué</span> hay<br/>evidencia?</h2>
+      <p class="ev-lead">El cannabis medicinal tiene <b>evidencia clínica documentada</b> en condiciones específicas. La fuerza de la evidencia varía según la indicación y la población estudiada.</p>
+
+      <div class="ev-list">
+        <div class="ev-row">
+          <div class="ev-num">i.</div>
+          <div class="ev-name">Dolor <span class="accent">crónico</span> — especialmente neuropático</div>
+          <div class="ev-strength">Robusta</div>
+        </div>
+        <div class="ev-row">
+          <div class="ev-num">ii.</div>
+          <div class="ev-name">Espasticidad por <span class="accent">esclerosis múltiple</span></div>
+          <div class="ev-strength">Robusta</div>
+        </div>
+        <div class="ev-row">
+          <div class="ev-num">iii.</div>
+          <div class="ev-name"><span class="accent">Epilepsias</span> refractarias específicas</div>
+          <div class="ev-strength">Robusta</div>
+        </div>
+        <div class="ev-row">
+          <div class="ev-num">iv.</div>
+          <div class="ev-name">Náuseas y vómitos por <span class="accent">quimioterapia</span></div>
+          <div class="ev-strength">Moderada</div>
+        </div>
+        <div class="ev-row">
+          <div class="ev-num">v.</div>
+          <div class="ev-name">Síntomas asociados a <span class="accent">fibromialgia</span></div>
+          <div class="ev-strength">Emergente</div>
+        </div>
+      </div>
+
+      <p class="ev-footer">Cada indicación requiere evaluación clínica individual.</p>
+    </div>
+    <div class="footer-band">
+      <div class="brand">
+        <img src="data:image/jpeg;base64,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" alt="Vitalae"/>
+        <div class="brand-name">Vitalae</div>
+      </div>
+      <div class="footer-meta">Evidencia clínica</div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 8: WHAT IT IS NOT ====== -->
+  <div class="slide slide-not" id="s8">
+    <div class="slide-number-w"><span>07 / </span>10</div>
+    <div class="not-mark">Tan importante como lo anterior</div>
+    <div class="not-content">
+      <div class="not-eyebrow">Honestidad clínica</div>
+      <h2 class="not-title">Lo que <span class="italic">no</span> es.</h2>
+
+      <div class="not-list">
+        <div class="not-item">
+          <div class="not-mark-x">i.</div>
+          <div class="not-text">No es una <span class="accent">cura universal</span>.</div>
+        </div>
+        <div class="not-item">
+          <div class="not-mark-x">ii.</div>
+          <div class="not-text">No reemplaza otros tratamientos sin <span class="accent">evaluación clínica</span>.</div>
+        </div>
+        <div class="not-item">
+          <div class="not-mark-x">iii.</div>
+          <div class="not-text">No es seguro <span class="accent">para cualquiera</span>.</div>
+        </div>
+        <div class="not-item">
+          <div class="not-mark-x">iv.</div>
+          <div class="not-text">No está libre de <span class="accent">interacciones</span> medicamentosas.</div>
+        </div>
+        <div class="not-item">
+          <div class="not-mark-x">v.</div>
+          <div class="not-text">No es inocuo en <span class="accent">embarazo, lactancia o adolescencia</span>.</div>
+        </div>
+      </div>
+
+      <p class="not-close">Es un tratamiento. Requiere indicación, dosis, seguimiento.</p>
+    </div>
+    <div class="footer-band-w">
+      <div class="brand">
+        <img src="data:image/jpeg;base64,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" alt="Vitalae"/>
+        <div class="brand-name">Vitalae</div>
+      </div>
+      <div class="footer-meta">Medicina basada en evidencia</div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 9: PROFESSIONAL CRITERIA ====== -->
+  <div class="slide slide-prof" id="s9">
+    <div class="slide-number"><span>08 / </span>10</div>
+    <div class="prof-mark">Cómo elegir · 6 criterios</div>
+    <div class="prof-content">
+      <div class="prof-eyebrow">Buscar bien también es cuidarte</div>
+      <h2 class="prof-title">Qué buscar en<br/>un <span class="italic">profesional</span>.</h2>
+      <p class="prof-lead">No todos los médicos que recetan cannabis medicinal lo hacen con el rigor necesario. Estos son los <b>seis criterios mínimos</b> para una práctica clínica responsable:</p>
+
+      <div class="criteria-list">
+        <div class="criterion">
+          <div class="check">i.</div>
+          <div class="criterion-text">Título médico verificable en <b>Superintendencia de Salud</b>.</div>
+        </div>
+        <div class="criterion">
+          <div class="check">ii.</div>
+          <div class="criterion-text"><b>Formación documentada</b> en medicina cannábica.</div>
+        </div>
+        <div class="criterion">
+          <div class="check">iii.</div>
+          <div class="criterion-text">Evaluación clínica <b>completa</b>, no receta rápida.</div>
+        </div>
+        <div class="criterion">
+          <div class="check">iv.</div>
+          <div class="criterion-text">Receta formal con <b>dosis, vía y duración</b>.</div>
+        </div>
+        <div class="criterion">
+          <div class="check">v.</div>
+          <div class="criterion-text"><b>Seguimiento</b> del tratamiento en el tiempo.</div>
+        </div>
+        <div class="criterion">
+          <div class="check">vi.</div>
+          <div class="criterion-text"><b>Capacidad de derivar</b> si no es el tratamiento adecuado.</div>
+        </div>
+      </div>
+
+      <div class="verify-tip">
+        <div class="tip-label">Verifica antes de agendar</div>
+        <div class="tip-text">superdesalud.gob.cl — registro nacional de prestadores médicos.</div>
+      </div>
+    </div>
+    <div class="footer-band">
+      <div class="brand">
+        <img src="data:image/jpeg;base64,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" alt="Vitalae"/>
+        <div class="brand-name">Vitalae</div>
+      </div>
+      <div class="footer-meta">Práctica clínica responsable</div>
+    </div>
+  </div>
+
+  <!-- ====== SLIDE 10: CTA ====== -->
+  <div class="slide slide-cta" id="s10">
+    <div class="cta-eyebrow">Información rigurosa, decisiones informadas</div>
+    <div class="cta-logo"><img src="data:image/jpeg;base64,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" alt="Vitalae"/></div>
+    <div class="cta-content">
+      <h2 class="cta-title">Si crees que<br/>podría <span class="accent">ayudarte.</span></h2>
+      <p class="cta-body">El cannabis medicinal puede ser una herramienta clínica útil en indicaciones específicas. La decisión correcta empieza con <b>evaluación profesional, no autodiagnóstico</b>.</p>
+
+      <div class="cta-steps">
+        <div class="step">
+          <div class="step-num">i.</div>
+          <p class="step-text">No te autodiagnostiques.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">ii.</div>
+          <p class="step-text">Busca evaluación médica profesional.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">iii.</div>
+          <p class="step-text">Pide receta formal y seguimiento.</p>
+        </div>
+      </div>
+
+      <div class="cta-button">
+        <span>Agenda tu evaluación</span>
+        <span style="font-size:20px;">→</span>
+      </div>
+    </div>
+    <div class="disclaimer">Contenido educativo · No reemplaza consulta médica · Reg. Superintendencia de Salud</div>
+  </div>
+
+</div>
+
+<script>
+async function exportSlide(id, filename) {
+  const el = document.getElementById(id);
+  const canvas = await html2canvas(el, {
+    scale: 2,
+    useCORS: true,
+    backgroundColor: null,
+    width: 1080,
+    height: 1350
+  });
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+  await new Promise(r => setTimeout(r, 400));
+}
+
+async function exportAll() {
+  const slides = document.querySelectorAll('.slide');
+  for (let i = 0; i < slides.length; i++) {
+    const num = String(i+1).padStart(2, '0');
+    await exportSlide(slides[i].id, `vitalae_cannabis_${num}.png`);
+  }
+  alert('Listo. Se descargaron las 10 láminas.');
+}
+
+async function exportCurrent() {
+  const slides = document.querySelectorAll('.slide');
+  let bestId = slides[0].id;
+  let bestDist = Infinity;
+  const centerY = window.scrollY + window.innerHeight / 2;
+  slides.forEach(s => {
+    const r = s.getBoundingClientRect();
+    const slideCenter = r.top + window.scrollY + r.height / 2;
+    const d = Math.abs(slideCenter - centerY);
+    if (d < bestDist) { bestDist = d; bestId = s.id; }
+  });
+  const num = bestId.replace('s', '').padStart(2, '0');
+  await exportSlide(bestId, `vitalae_cannabis_${num}.png`);
+}
+</script>
+
+</body>
+</html>
